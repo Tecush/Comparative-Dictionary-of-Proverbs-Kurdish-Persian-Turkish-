@@ -42,11 +42,11 @@ Digitized and developed by **Tecush Mohammadi**, this project ensures that the r
 
 ## 📖 1. What Are Ancestral Proverbs?
 
-> *Ancestral proverbs are refined, thoughtful sayings with layered meanings. Henceforth, we shall refer to them collectively as "proverbs of the ancestors."*
-
-They represent one of the most prominent and significant branches of oral literature and folk speech, preserved from bygone eras and passed down as a cultural legacy to newer generations.
-
+Ancestral proverbs are refined, thoughtful sayings with layered meanings. Henceforth, we shall refer to them collectively as "proverbs of the ancestors." They represent one of the most prominent and significant branches of oral literature and folk speech, preserved from bygone eras and passed down as a cultural legacy to newer generations.
 In Kurdish terms, a proverb of the ancestors is a short or long sentence that, in essence, brings before the eyes and ears of people today the various stages of history, the passage of time, the way of life of their forebears, and the transformations that have unfolded over thousands of years within the fabric of communal life.
+Among the enduring characteristics of this form of oral literature are clarity of expression, eloquence, and accessibility to all social classes and ordinary people. Most of these proverbs originate from the everyday language of society. They are simple, unadorned, free of artificial complexity, and authentically reflect the spirit of their time.
+Some proverbs draw their source from the hardships and the bitter-sweet events of daily life experienced by the people themselves. The consequences of past calamities have thus become lessons for guidance, awakening, and direction for the generations of today and tomorrow.
+Another distinctive feature of ancestral proverbs is their fearless, unreserved discussion of life's deepest truths. Some of these sayings, with frankness and without restraint or modesty, cross the forbidden boundaries and red lines of bourgeois literary conventions.
 
 ### 🌟 Enduring Characteristics
 * **Clarity & Eloquence:** Accessible to all social classes and ordinary people.
@@ -59,41 +59,26 @@ In Kurdish terms, a proverb of the ancestors is a short or long sentence that, i
 ## 🌍 2. Comparative Study of Proverbs Across Dialects
 ### *Kurdish Alongside Persian and Turkish*
 
-Kurdish ancestral proverbs exhibit noticeable variations and a rich diversity in structure, depending on the region and dialect. This diversity stems from the unique geography of Kurdistan and the historical absence of unobstructed travel routes, leading to regional isolation. Consequently, for a single concept, we possess dozens of beautifully crafted proverbs.
+Kurdish ancestral proverbs and wise sayings exhibit noticeable variations and a rich diversity in their structure and formulation, depending on the region of residence and the specific dialect.
+The cause of this diversity lies in the unique geography of Kurdistan and the historical absence of unobstructed travel routes. This led to the isolation of certain areas across different regions from one another. Consequently, it is often the case that for expressing a single concept, we possess dozens of beautifully crafted proverbs and wise sayings, each more elegant than the next.
+At the same time, Kurdish proverbs share a remarkable degree of commonality and similarity with the proverbs of neighboring nations (Persian and Turkish). In many instances, the proverbs of these three nations are identical or nearly identical. This shared heritage and resemblance provided a key motivation and significant reason for conducting a comparative study among the ancestral proverbs of these three languages.
+As we mentioned earlier, ancestral proverbs serve as a rich mirror and a vibrant tableau of destiny, the manner of life, and the moments that occurred in the past.
+The forced intertwining of fates and the blended social, economic, and cultural conditions of the Kurdish, Persian, and Turkish peoples served as a shared incentive to research and explore this aspect of their oral literature. Under the influence of similar ways of life, livelihoods, hardships, and joys throughout history, the ancestral proverbs of these three nations developed side by side, branching out and producing new literary foliage together.
+This comparative study is an effort to dismantle the rigid, accumulated barriers between these three nations and to demonstrate the richness and expansiveness of their shared oral literature.
+On another note, as civilization and technology continue to advance, ancestral proverbs increasingly face the risk of fading away and being forgotten. The words of Master Alaaeddin Sajadi are profoundly accurate when he states: "The reason ancestral proverbs have survived to this day is illiteracy." The evidence for this claim is that our nation's literacy has historically not been cultivated in our mother tongue.
+As long as literacy continues in its current form and our children and youth remain alienated from their native language, this threat will persist. It is true that literacy has enabled passionate and dedicated individuals to collect and record proverbs and wise sayings, publishing them as books. However, we are well aware that these works are printed in limited editions, often placed in archives, and are rarely encountered or utilized by our contemporary society.
+The endeavor to compare the proverbs of these three neighboring nations represents a race against this harsh reality. It aims to redirect the attention of young people toward this invaluable treasure of oral literature and to foster closer ties among the three nations, with the Persian language serving as a bridge for mutual understanding and unity.
 
-### 🤝 A Shared Heritage
-At the same time, Kurdish proverbs share a remarkable degree of commonality with neighboring nations (**Persian** and **Turkish**). In many instances, the proverbs of these three nations are identical or nearly identical. 
-
-The forced intertwining of fates and the blended social, economic, and cultural conditions of these peoples served as a shared incentive to research this oral literature. Under the influence of similar ways of life, hardships, and joys, the ancestral proverbs of these three nations developed side by side, branching out and producing new literary foliage together.
-
-### 🏃 A Race Against Time
-As civilization advances, ancestral proverbs face the risk of fading away. As long as literacy remains alienated from the native tongue, this threat persists. While passionate individuals have published books, they are often limited in edition and hidden in archives. 
-
-**This comparative digital study is a race against this harsh reality.** It aims to redirect the attention of the youth toward this invaluable treasure and foster closer ties among the three nations, with the Persian language serving as a bridge for mutual understanding and unity.
-
----
 
 ## 🕰️ 3. How and Where Did I Begin This Work?
 
-Forty or fifty years ago, literacy was not widespread. The "Mirza" (literate scholars) were few, mostly studying Arabic and classical Persian poetry, rarely engaging with Kurdish literature. Reading and writing in Kurdish held little importance, and no formal effort was made to collect these proverbs. They survived solely because they were actively used in everyday conversations.
+Forty or fifty years ago, and even earlier, reading and writing were not as widespread as they are today, and literacy had not yet flourished. Those who were literate, often referred to as "Mirza," were few in number and held a special status and value within society. Most of them had studied Arabic, the Quran, and the poetry of Saadi, Golestan, and Bustan under the guidance of local religious teachers or in small traditional schools. They rarely engaged with the Kurdish language or literature.
+In that era, reading and writing in Kurdish within Kurdistan, in the Iranian part of the region, held little importance or, fundamentally, did not exist at all. No effort was made to collect ancestral proverbs or wise sayings. These invaluable treasures survived and were preserved from oblivion solely because they were actively used in the everyday conversations of people in towns and villages.
+Undoubtedly, the birthplace, origin, and growth of ancestral proverbs were the gatherings and assemblies of ordinary, common people.
+The settings that gave rise to, nurtured, and helped these proverbs flourish, and which played a vital role in preserving this precious heritage, include: marketplaces, tea houses, gatherings of joy and of mourning, the back room of the mosque (the çeqexane), where those helping with a mourning ceremony would sit and talk, and the same room through the month of Ramadan, the porches and rooftops of village mosques in winter, the women's gathering place at the spring, the communal work parties (herewez) for house-building and harvest, and the places where people of town and country gathered to spend time during periods of unemployment. Especially on long winter nights, when people would gather around the hearth or beneath the traditional korsi.
+Beginning in the year 1967 CE (1346 Solar Hijri), by drawing upon those rich sources mentioned above—namely, within society itself—I embarked on this work. Then, after 48 years, in the year 2015 CE (1394 Solar Hijri), this output was published under the title Zardey Demkel in two volumes (2,800 pages) by the Research Institute of the University of Kurdistan.
+Following persistent effort and the addition of proverbs from all three languages, the second edition of this book, with comprehensive and thorough revisions, is now presented under the title A Comparative Dictionary of Kurdish Dialectal Variations Alongside Persian and Turkish.
 
-### 🏺 The Cradle of Proverbs
-Undoubtedly, the birthplace and growth of these proverbs were the gatherings of ordinary people. The settings that nurtured this precious heritage include:
-* 🏪 Bustling **marketplaces** and traditional **tea houses**.
-* 🎭 Gatherings of **joy and mourning**.
-* 🕌 The back room of the mosque (the ***çeqexane***), where mourners would sit and talk.
-* 🌙 Porches and rooftops of village mosques in winter.
-* 🏺 The **women's gathering place at the spring**.
-* 🌾 Communal work parties (*herewez*) for house-building and harvest.
-* 🪵 Places where townspeople and villagers gathered during unemployment, especially on **long winter nights around the hearth or beneath the traditional *korsi***.
-
-### 📚 The Journey to Publication
-Beginning in **1967 CE (1346 Solar Hijri)**, drawing upon these rich societal sources, the author embarked on this monumental work. After **48 years**, in **2015 CE (1394 Solar Hijri)**, the output was published as *Zardey Demkel* in two volumes (2,800 pages) by the Research Institute of the University of Kurdistan.
-
-Following persistent effort, the addition of proverbs from all three languages, and comprehensive revisions, the second edition is now presented digitally under the title: 
-***A Comparative Dictionary of Kurdish Dialectal Variations Alongside Persian and Turkish***.
-
----
 
 ## 💻 Digital Ecosystem | Software & Web
 
