@@ -1,10 +1,10 @@
 <div align="center">
 
-<img src="assets/splash.webp" alt="Comparative Dictionary of Proverbs" width="820">
+<img alt="Comparative Dictionary of Proverbs" width="820" src=https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/blob/main/splash.webp>
 
 <br><br>
 
-<img src="assets/icon.png" alt="App icon" width="96">
+<img alt="App icon" width="96" src=https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/blob/main/icon.png>
 
 # 📜 A Comparative Dictionary of Ancestral Proverbs 📜
 ### *Wise Sayings and Layered Meanings — Kurdish Dialects alongside Persian and Turkish*
@@ -154,7 +154,7 @@ To ensure this 48-year labor of love reaches the modern generation, the physical
 ### ✨ Features of the Desktop Application
 * **Full-text and fuzzy search** across the entire collection
 * **Browse by collection**, with synonyms, cross-references and translations
-* **Filter by dialect** — nine Kurdish dialects, each distinguished by colour
+* **Filter by dialect** — nine Kurdish dialects, each distinguished by color
 * **Five interface languages** — English, Sorani, Kurmanji, Persian and Turkish, with full right-to-left support
 * **On-screen Kurdish keyboard** for Sorani, Kurmanji and Hawrami
 * **Eight display themes**, from light to high contrast
@@ -168,18 +168,20 @@ To ensure this 48-year labor of love reaches the modern generation, the physical
 ### 🖥️ Desktop — Windows
 
 <p align="center">
-  <img src="assets/desktop.webp" alt="The desktop application: search results, collection view, dialect colouring and the statistics panel" width="100%">
+  <i><img alt="Comparative Dictionary of Proverbs" width="820" src=https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/blob/main/desktop.webp>
+  <br>
+  <i>"The desktop application: search results, collection view, dialect coloring and the statistics panel"</i>
 </p>
 
 <p align="center">
-  <i>Search results on the left, the collection with its synonyms and cross-references in the centre,
-  the collection browser on the right, and per-proverb statistics below. Nine dialects, each in its own colour.</i>
+  <i>Search results on the left, the collection with its synonyms and cross-references in the center,
+  the collection browser on the right, and per-proverb statistics below. Nine dialects, each in its own color.</i>
 </p>
 
 ### 📱 Android — Phone and Tablet
 
 <p align="center">
-  <img src="assets/mobile-tablet.webp" alt="The Android application on a phone and on a tablet" width="100%">
+  <img alt="The Android application on a phone and on a tablet" width="600" src=https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/blob/main/mobile-tablet.webp>
 </p>
 
 <p align="center">
