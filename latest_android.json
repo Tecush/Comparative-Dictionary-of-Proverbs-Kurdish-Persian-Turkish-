@@ -1,0 +1,11 @@
+{
+  "db": {
+    "version": "20260926",
+    "url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/db-20260926/kurdish_proverbs_mobile.kpdb",
+    "size": 16070116,
+    "uncompressed_size": 48619520,
+    "sha256": "3b64415aa7c0aaadcb7824d55f1782c01ffa0690accc6edfa837b11fad2f84a8",
+    "min_app_version_code": 2,
+    "notes": {}
+  }
+}
