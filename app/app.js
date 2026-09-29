@@ -12,7 +12,7 @@
 
   // ───────────────────────── configuration ─────────────────────────
   var CFG = {
-    version: '2.0.0',
+    version: '2.0.1',
     registrationUrl: 'https://script.google.com/macros/s/AKfycbySFYsh1_b5FrBat_nINGnxV1DnKrJAsCsuUzBzCuFAZHHxNZcR4ZBqBEMn0Nk2RKE-/exec',
     website: 'https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/',
     androidApk: 'https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/download',

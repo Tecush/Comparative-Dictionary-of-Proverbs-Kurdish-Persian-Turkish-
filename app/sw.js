@@ -2,7 +2,7 @@
  * sw.js — offline support and automatic updates for the web app.
  * !!! Change VERSION on every web release: browsers then fetch the new files by themselves.
  */
-var VERSION = 'kp-web-202609261545';
+var VERSION = 'kp-web-202609290837';
 var FILES = ['./', 'index.html', 'app.css', 'app.js', 'core.js', 'i18n.js', 'intro.json', 'manifest.webmanifest',
   'lib/sql-wasm.js', 'lib/sql-wasm.wasm', 'fonts/vazirmatn_regular.ttf', 'fonts/vazirmatn_bold.ttf',
   'icons/icon-192.png', 'icons/icon-512.png', 'icons/apple-touch-icon.png'];
