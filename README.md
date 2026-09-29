@@ -14,6 +14,7 @@
   <img src="https://img.shields.io/badge/Developer-Tecush%20Mohammadi-005B96?style=for-the-badge&logo=github" alt="Developer">
   <img src="https://img.shields.io/badge/Desktop-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows">
   <img src="https://img.shields.io/badge/Mobile-Android-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android">
+  <img src="https://img.shields.io/badge/Mobile-iPhone%20%26%20iPad-000000?style=for-the-badge&logo=apple&logoColor=white" alt="iPhone and iPad">
   <img src="https://img.shields.io/badge/Language-Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
 </p>
 
@@ -41,6 +42,7 @@
 
 ## 🏛️ Table of Contents
 - [📥 Download](#-download)
+- [🆕 What's New in Version 2](#-whats-new-in-version-2)
 - [✨ About the Project](#-about-the-project)
 - [📖 1. What Are Ancestral Proverbs?](#-1-what-are-ancestral-proverbs)
 - [🌍 2. Comparative Study Across Dialects](#-2-comparative-study-of-proverbs-across-dialects)
@@ -55,22 +57,57 @@
 
 ## 📥 Download
 
-**Current release: [KP-v1.0.0](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/tag/KP-v1.0.0)** — the first public release, for Windows and Android.
+**Current release: [KP-v2.0.1](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/tag/KP-v2.0.1)** — for Windows, Android, and iPhone & iPad.
 
 <p align="center">
-  <b>28,799</b> collections &nbsp;•&nbsp; <b>111,830</b> proverbs &nbsp;•&nbsp; <b>127,168</b> translations &nbsp;•&nbsp; <b>9</b> Kurdish dialects
+  <b>31,116</b> collections &nbsp;•&nbsp; <b>120,206</b> proverbs &nbsp;•&nbsp; Kurdish dialects alongside <b>Persian</b> and <b>Turkish</b>
+</p>
+
+<p align="center">
+  <i>Sorani · Hawrami · Gerrusî (Bijar) · Kurmanji Rojava û Bakur · Kelhuri/Kermanshahi · Kurmanji Xorasan · Leki/Lory</i>
 </p>
 
 | Platform | Download | Requirements |
 | :--- | :--- | :--- |
-| 🖥️ **Windows** | [**KurdishProverbs_Setup_v1.0.0.exe**](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v1.0.0/KurdishProverbs_Setup_v1.0.0.exe) | Windows 10 or later, 64-bit |
-| 📱 **Android** | [**KurdishProverbs-v1.0.0.apk**](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v1.0.0/KurdishProverbs-v1.0.0.apk) | Android 8.0 or later |
+| 🖥️ **Windows** | [**KurdishProverbs_Setup_v2.0.0.exe**](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.0/KurdishProverbs_Setup_v2.0.0.exe) | Windows 10 or later, 64-bit |
+| 📱 **Android** | [**KurdishProverbs-v2.0.1.apk**](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.1/KurdishProverbs-v2.0.1.apk) | Android 8.0 or later |
+| 🍏 **iPhone & iPad** | [**Open the web app in Safari**](https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/app/) and add it to your Home Screen | iOS 16.4 or later |
 
 > All releases, including earlier versions, are listed on the
-> **[Releases page](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases)**.
+> **[Releases page](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases)**, and on the **[project website](https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/download)**.
 >
 > A one-time registration with your name and email is required when you first
 > open the application.
+>
+> **Upgrading from Android 1.0?** Please uninstall the old app first, then install 2.0.1.
+> This is needed only once — from now on the app updates itself.
+
+---
+
+## 🆕 What's New in Version 2
+
+### The dictionary
+* **More than 4,500 new proverbs**, most of them in **Leki, Lori and Kermanshahi**.
+* **The Leki dialect has been added:** Leki and Lori proverbs are now brought together under **Leki/Lory (لەکی/لوڕی)**.
+* **Corrected dialect names (2.0.1):** Kurmanji Rojava û Bakur (کرمانجی ڕۆژئاوا و باکوور), Leki/Lory, Gerrusî, Xorasan.
+
+### Windows
+* **Update check** — the program tells you when a new version is available.
+* **Version information** and an **About** page with the author's introduction in five languages.
+* **Refreshed interface** and improved dark theme, a rebuilt **Statistics** panel, more readable dialect colours and more reliable navigation between references.
+* **One-time registration** with email confirmation.
+
+### Android — rebuilt from the ground up
+* **Much smaller app (about 2 MB).** The dictionary (about 16 MB) is downloaded once and then works completely **offline**.
+* **Automatic updates:** new dictionary versions install by themselves; new app versions are offered with one tap.
+* **Five interface languages** with right-to-left layout for Sorani and Persian.
+* **Smarter search** that tolerates common spelling differences (ي/ی, ك/ک, ه‌/ە, Turkish letters typed without ç/ş/ğ) and suggests similar spellings.
+* **Proverb of the day**, random proverb, **favourites**, copy & share, dialect filter, statistics per dialect, **dark mode** and adjustable text size.
+* A built-in **Kurdish font**, so letters such as ڵ ڕ ێ ۆ display correctly on every phone.
+
+### iPhone & iPad — new
+* The dictionary as a **web app**: add it to the Home Screen in three taps, then it opens like an app, **works offline** and **updates itself**.
+* The same features and design as the Android app.
 
 ---
 
@@ -78,7 +115,7 @@
 
 This repository represents a monumental bridge between **ancient oral heritage** and **modern digital technology**. It houses the digital implementations of the magnum opus by **Khalil Mohammadi**, a comprehensive comparative dictionary of Kurdish, Persian, and Turkish ancestral proverbs.
 
-Digitized and developed by **Tecush Mohammadi**, this project ensures that the rich, layered meanings of our forebears are preserved, accessible, and beautifully presented to the modern world through dedicated desktop and mobile applications, supported by a central project website.
+Digitized and developed by **Tecush Mohammadi**, this project ensures that the rich, layered meanings of our forebears are preserved, accessible, and beautifully presented to the modern world through dedicated desktop and mobile applications (Windows, Android, iPhone and iPad), supported by a central project website.
 
 ---
 
@@ -148,8 +185,9 @@ To ensure this 48-year labor of love reaches the modern generation, the physical
 | Platform | Description |
 | :--- | :--- |
 | 🖥️ **Windows Desktop App** | A robust, offline-capable desktop application containing the **full dictionary database**. Features advanced search, filtering, and a beautiful UI for deep research. *(Currently Windows only; macOS & Linux support is planned for the future).* |
-| 📱 **Android App** | A lightweight, native mobile application containing the dictionary, allowing users to carry the wisdom of the ancestors in their pockets for quick lookups and daily reading. |
-| 🌐 **Official Project Website** | The central digital storefront. It **does not host the dictionary database**, but serves as the official hub to introduce the project, provide direct download links for the Desktop and Android apps, and offer contact information for the author and developer. |
+| 📱 **Android App** | A lightweight native application (about 2 MB). It downloads the dictionary once as an **encrypted file** that only the app can open, then works fully offline, and keeps itself and the dictionary up to date. |
+| 🍏 **iPhone & iPad Web App** | The dictionary for Apple devices, installed from Safari to the Home Screen. Same features as the Android app, works offline and updates itself. |
+| 🌐 **Official Project Website** | The central hub: it introduces the project and the author, provides direct download links for every platform (always pointing to the newest version automatically), and offers contact information for the author and developer. |
 
 ### ✨ Features of the Desktop Application
 * **Full-text and fuzzy search** across the entire collection
@@ -159,7 +197,17 @@ To ensure this 48-year labor of love reaches the modern generation, the physical
 * **On-screen Kurdish keyboard** for Sorani, Kurmanji and Hawrami
 * **Eight display themes**, from light to high contrast
 * **Statistics** for any collection, any proverb, or the collection as a whole
+* **Automatic update check** for new versions
 * **Works entirely offline** once installed
+
+### ✨ Features of the Mobile Apps (Android, iPhone & iPad)
+* **Fast offline search** with tolerance for spelling differences, and "similar spelling" suggestions
+* **Browse by collection** with synonyms and references — tap a reference to jump straight to its target
+* **Dialect filter** and dialect colours, identical to the desktop application
+* **Proverb of the day**, random proverb and **favourites**
+* **Copy and share** any proverb or a whole collection
+* **Five interface languages**, **dark mode** and adjustable text size
+* **Automatic updates** of the app and the dictionary
 
 ---
 
@@ -195,7 +243,7 @@ To ensure this 48-year labor of love reaches the modern generation, the physical
 ### 🖥️ Desktop Application (Windows)
 *The desktop application contains the complete dictionary and runs fully offline.*
 
-1. Download **[KurdishProverbs_Setup_v1.0.0.exe](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/latest)** from the latest release.
+1. Download the **Windows installer** (`KurdishProverbs_Setup_vX.Y.Z.exe`) from the **[Download table](#-download)** or the **[project website](https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/download)**.
 2. Run the installer and follow the on-screen instructions.
 3. Launch the application from your desktop shortcut.
 4. On first launch, register with your name and email. An activation code is sent to you by email; enter it to begin.
@@ -206,16 +254,27 @@ To ensure this 48-year labor of love reaches the modern generation, the physical
 
 ### 📱 Android Application
 
-1. Download the **[.apk file](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/latest)** from the latest release.
+1. Download the **`.apk` file** from the **[Download table](#-download)** or the **[project website](https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/download)**.
 2. When your browser asks, allow installation from this source. On most devices this is **Settings → Apps → Special access → Install unknown apps**.
 3. Open the downloaded `.apk` file and tap **Install**.
-4. Open the app and begin your journey through ancestral wisdom.
+4. Open the app, register once with your name and email, and let it download the dictionary (about 16 MB — Wi-Fi recommended).
+
+> **Had version 1.0?** Uninstall it first — version 2 was rebuilt from scratch and cannot install over it.
+> After that, new versions are offered inside the app and the dictionary updates itself.
+
+### 🍏 iPhone & iPad
+
+1. Open **[https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/app/](https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/app/)** in **Safari**.
+2. Tap the **Share** button, then **Add to Home Screen**, then **Add**. (The page shows an arrow and these steps in your language.)
+3. Open the dictionary from your Home Screen, register once, and it downloads the dictionary (about 16 MB).
+
+> If the link opened inside Telegram, Instagram or WhatsApp, choose **Open in Safari** first — installing only works from Safari.
 
 ### 🌐 Official Project Website
 
 To learn more about the book, download the applications, or get in touch:
 
-**[Insert Web URL Here]**
+**[https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/](https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/)**
 
 There you will find detailed introductions, direct download portals, and contact details for **Khalil Mohammadi** (Author) and **Tecush Mohammadi** (Developer).
 
@@ -224,9 +283,10 @@ There you will find detailed introductions, direct download portals, and contact
 ## 🧱 Tech Stack
 
 * **🐍 Desktop (Windows):** Python with PySide6 (Qt 6), packaged with PyInstaller and Inno Setup. SQLite with FTS5 full-text indexing for fast, offline querying of the complete dictionary.
-* **📱 Mobile (Android):** Native/cross-platform Android framework, optimized for mobile screens and low-resource devices.
-* **🌐 Web (Landing Page):** Modern frontend technologies (HTML5, CSS3, JavaScript) to create a responsive, beautiful promotional and informational site.
-* **🗄️ Data Architecture:** Custom structured database designed to handle complex cross-referencing between Kurdish dialects, Persian, and Turkish.
+* **📱 Mobile (Android):** Native Java app (Android SDK, Material Components), SQLite with FTS4 full-text search, bundled Vazirmatn font; targets Android 16 and runs on Android 8.0 and later.
+* **🍏 Mobile (iPhone & iPad):** Installable web app (PWA) in plain JavaScript, with SQLite compiled to WebAssembly (sql.js) and a service worker for offline use.
+* **🌐 Website:** A single-page site hosted on GitHub Pages; it reads the same update files as the apps, so versions and download links update automatically.
+* **🗄️ Data Architecture:** Custom structured database designed to handle complex cross-referencing between Kurdish dialects, Persian, and Turkish. The mobile edition is built from the desktop database by a release tool and distributed **encrypted**, so it can only be opened by the apps.
 
 ---
 
@@ -255,7 +315,7 @@ This project is a collaboration spanning generations, combining lifelong academi
 
 ### 💻 Software Developer & Digital Architect
 **Tecush Mohammadi**
-> *For conceptualizing, designing, and developing the Windows Desktop, Android, and Web applications. By translating decades of academic research into modern, accessible software, Tecush has ensured that this cultural treasure is preserved for the digital age.*
+> *For conceptualizing, designing, and developing the Windows Desktop, Android, iPhone & iPad, and Web applications. By translating decades of academic research into modern, accessible software, Tecush has ensured that this cultural treasure is preserved for the digital age.*
 
 ### 🏛️ Publisher of the First Edition
 **Research Institute of the University of Kurdistan**
@@ -268,7 +328,7 @@ This project is a collaboration spanning generations, combining lifelong academi
 ### 🌟 If this project helps you connect with your heritage, please consider giving it a Star! 🌟
 
 <a href="https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/latest">
-  <img src="https://img.shields.io/badge/⬇️%20Download%20Now-KP--v1.0.0-success?style=for-the-badge" alt="Download">
+  <img src="https://img.shields.io/badge/⬇️%20Download%20Now-KP--v2.0.1-success?style=for-the-badge" alt="Download">
 </a>
 
 <p align="center">
