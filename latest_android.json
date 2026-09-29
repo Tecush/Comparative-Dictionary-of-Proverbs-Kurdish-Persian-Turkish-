@@ -1,11 +1,25 @@
 {
   "db": {
-    "version": "20260926",
-    "url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.0/kurdish_proverbs_mobile.kpdb",
-    "size": 16070116,
+    "version": "20260929",
+    "url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.1/kurdish_proverbs_mobile.kpdb",
+    "size": 16045729,
     "uncompressed_size": 48619520,
-    "sha256": "3b64415aa7c0aaadcb7824d55f1782c01ffa0690accc6edfa837b11fad2f84a8",
+    "sha256": "190aa713737fe12bdaf0f3c8568dbc05c06f48a67f02280e8dbec33e4099ce2f",
     "min_app_version_code": 2,
-    "notes": {}
+    "notes": {
+      "en": "Corrected dialect names: Kurmanji Rojava û Bakur, Leki, Gerrusî, Xorasan.",
+      "ckb": "ناوی شێوەزارەکان ڕاستکرانەوە: کرمانجی ڕۆژئاوا و باکوور، لەکی، گەڕووسی، خۆراسان."
+    }
+  },
+  "app": {
+    "version_code": 3,
+    "version_name": "2.0.1",
+    "released": "2026-09-29",
+    "apk_url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.1/KurdishProverbs-v2.0.1.apk",
+    "apk_size": 2189110,
+    "apk_sha256": "06cef92acf99ee62eb50673a0f96b8fe0ac4652b8e8f48525a549b730f3f7b13",
+    "notes": {
+      "en": "Corrected dialect names: Kurmanji Rojava û Bakur, Leki, Gerrusî, Xorasan."
+    }
   }
 }
