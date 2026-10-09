@@ -189,6 +189,18 @@
     return ids.map(function (id) { return found[id]; }).filter(Boolean);
   };
 
+  /** Dialect view: every proverb of one dialect, in dictionary (collection) order. */
+  Store.prototype.proverbsOfDialect = function (d) {
+    var self = this;
+    this.collections();
+    return this.rows('SELECT p.id, p.text, MIN(e.collection_id) AS cid FROM proverbs p JOIN collection_entries e ON e.proverb_id = p.id ' +
+      'WHERE p.dialect_id = ? GROUP BY p.id ORDER BY cid, p.id', [d | 0])
+      .map(function (r) {
+        var c = self._byId[r[2]];
+        return c ? {proverbId: r[0], text: r[1] || '', dialect: d, collectionId: c.id, letter: c.letter, title: c.text} : null;
+      }).filter(Boolean);
+  };
+
   Store.prototype.appearances = function (pid) {
     var seen = {}, out = [];
     this.rows('SELECT collection_id, entry_id, is_representative, is_synonym, synonym_type, is_reference, reference_type, ' +

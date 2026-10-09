@@ -159,7 +159,13 @@ window.KP_I18N = {
 "opening": "Opening the dictionary…",
 "app_updated": "The app was updated to the newest version.",
 "web_setup_msg": "The proverb database (%1$s) is downloaded once. After that the dictionary works completely offline.",
-"browser_unsupported": "This browser is too old for the dictionary. Please update iOS / your browser."
+"browser_unsupported": "This browser is too old for the dictionary. Please update iOS / your browser.",
+"register_or": "— or —",
+"register_telegram": "Register with Telegram",
+"register_tg_wait": "1. Open %1$s in Telegram and tap “Start” (or send /start).\n2. The bot sends you a 6-digit code.\n3. Enter the code below.",
+"register_tg_open_again": "Open Telegram",
+"register_use_email": "Use email instead",
+"register_tg_missing": "Telegram could not be opened. Is it installed on this device?"
 },
 "ckb": {
 "app_name": "پەندە کوردییەکان",
@@ -320,7 +326,13 @@ window.KP_I18N = {
 "opening": "کردنەوەی فەرهەنگەکە…",
 "app_updated": "بەرنامەکە نوێکرایەوە بۆ نوێترین وەشان.",
 "web_setup_msg": "داتابەیسی پەندەکان (%1$s) تەنها یەک جار دادەگیرێت. دوای ئەوە فەرهەنگەکە بە تەواوی بەبێ ئینتەرنێت کار دەکات.",
-"browser_unsupported": "ئەم وێبگەڕە بۆ فەرهەنگەکە زۆر کۆنە. تکایە iOS یان وێبگەڕەکەت نوێ بکەرەوە."
+"browser_unsupported": "ئەم وێبگەڕە بۆ فەرهەنگەکە زۆر کۆنە. تکایە iOS یان وێبگەڕەکەت نوێ بکەرەوە.",
+"register_or": "— یان —",
+"register_telegram": "خۆتۆمارکردن بە تێلێگرام",
+"register_tg_wait": "١. %1$s لە تێلێگرام بکەرەوە و «Start» دابگرە (یان /start بنێرە).\n٢. بۆتەکە کۆدێکی ٦ ژمارەییت بۆ دەنێرێت.\n٣. کۆدەکە لە خوارەوە بنووسە.",
+"register_tg_open_again": "کردنەوەی تێلێگرام",
+"register_use_email": "لە بری ئەوە ئیمەیڵ بەکاربهێنە",
+"register_tg_missing": "تێلێگرام نەکرایەوە. ئایا لەسەر ئەم ئامێرە دامەزراوە؟"
 },
 "kmr": {
 "app_name": "Pendên Kurdî",
@@ -481,7 +493,13 @@ window.KP_I18N = {
 "opening": "Ferheng tê vekirin…",
 "app_updated": "Bername hate nûkirin bo guhertoya herî nû.",
 "web_setup_msg": "Databasa pendan (%1$s) carekê tê daxistin. Piştre ferheng bi tevahî bê înternet dixebite.",
-"browser_unsupported": "Ev gerok ji bo ferhengê pir kevn e. Ji kerema xwe iOS an gerokê nû bike."
+"browser_unsupported": "Ev gerok ji bo ferhengê pir kevn e. Ji kerema xwe iOS an gerokê nû bike.",
+"register_or": "— an —",
+"register_telegram": "Bi Telegramê xwe tomar bike",
+"register_tg_wait": "1. %1$s di Telegramê de veke û li “Start” bitikîne (an /start bişîne).\n2. Bot kodeke 6 hejmarî ji te re dişîne.\n3. Kodê li jêr binivîse.",
+"register_tg_open_again": "Telegramê veke",
+"register_use_email": "Li şûna wê e-peyamê bikar bîne",
+"register_tg_missing": "Telegram venebû. Ma li ser vê cîhazê sazkirî ye?"
 },
 "fa": {
 "app_name": "ضرب‌المثل‌های کردی",
@@ -642,7 +660,13 @@ window.KP_I18N = {
 "opening": "در حال باز کردن فرهنگ…",
 "app_updated": "برنامه به آخرین نسخه به‌روز شد.",
 "web_setup_msg": "پایگاه دادهٔ ضرب‌المثل‌ها (%1$s) فقط یک بار دانلود می‌شود. پس از آن فرهنگ کاملاً آفلاین کار می‌کند.",
-"browser_unsupported": "این مرورگر برای فرهنگ بسیار قدیمی است. لطفاً iOS یا مرورگر خود را به‌روز کنید."
+"browser_unsupported": "این مرورگر برای فرهنگ بسیار قدیمی است. لطفاً iOS یا مرورگر خود را به‌روز کنید.",
+"register_or": "— یا —",
+"register_telegram": "ثبت‌نام با تلگرام",
+"register_tg_wait": "۱. %1$s را در تلگرام باز کنید و «Start» را بزنید (یا /start بفرستید).\n۲. ربات یک کد ۶ رقمی برایتان می‌فرستد.\n۳. کد را در زیر وارد کنید.",
+"register_tg_open_again": "باز کردن تلگرام",
+"register_use_email": "به‌جای آن از ایمیل استفاده کنید",
+"register_tg_missing": "تلگرام باز نشد. آیا روی این دستگاه نصب است؟"
 },
 "tr": {
 "app_name": "Kürt Atasözleri",
@@ -803,6 +827,12 @@ window.KP_I18N = {
 "opening": "Sözlük açılıyor…",
 "app_updated": "Uygulama en yeni sürüme güncellendi.",
 "web_setup_msg": "Atasözü veritabanı (%1$s) yalnızca bir kez indirilir. Sonrasında sözlük tamamen çevrimdışı çalışır.",
-"browser_unsupported": "Bu tarayıcı sözlük için çok eski. Lütfen iOS'u / tarayıcınızı güncelleyin."
+"browser_unsupported": "Bu tarayıcı sözlük için çok eski. Lütfen iOS'u / tarayıcınızı güncelleyin.",
+"register_or": "— veya —",
+"register_telegram": "Telegram ile kaydol",
+"register_tg_wait": "1. Telegram'da %1$s botunu açın ve “Başlat / Start”a dokunun (veya /start gönderin).\n2. Bot size 6 haneli bir kod gönderir.\n3. Kodu aşağıya girin.",
+"register_tg_open_again": "Telegram'ı aç",
+"register_use_email": "Bunun yerine e-posta kullan",
+"register_tg_missing": "Telegram açılamadı. Bu cihazda yüklü mü?"
 }
 };

@@ -12,13 +12,16 @@
 
   // ───────────────────────── configuration ─────────────────────────
   var CFG = {
-    version: '2.0.1',
+    version: '2.1.0',
     registrationUrl: 'https://script.google.com/macros/s/AKfycbySFYsh1_b5FrBat_nINGnxV1DnKrJAsCsuUzBzCuFAZHHxNZcR4ZBqBEMn0Nk2RKE-/exec',
     website: 'https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/',
     androidApk: 'https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/download',
     email: 'kurdishproverbs2026@gmail.com',
-    dbInfo: 'data/db.json'
+    dbInfo: 'data/db.json',
+    telegramBot: 'Kurdish_Proverbs_Bot',         // inserted by the release tool from kp.telegramBot
+    telegramServer: 'https://script.google.com/macros/s/AKfycby1UQhWASOnFDDDEYidQJgNvsXltBe7lYHtdrt37lH5iM8rRQdUSEOnN4XTNNvDPAQr/exec'    // desktop registration script (owns the bot) — kp.telegramServerUrl
   };
+  var TG_ON = CFG.telegramBot.indexOf('__') !== 0 && CFG.telegramBot !== '' && CFG.telegramServer.indexOf('https://') === 0;
   // database key (lightly obfuscated; the same kp.dbKey as in secrets.properties)
   var DBK = (function () {
     var m = 'KurdishProverbs-Khalil-Mohammadi', h = '1f3e2b1d10354531371b372445322c552c50380159097a7f37042a392754261107581d2d074105331e3c4e', o = '';
@@ -247,7 +250,7 @@
   }
 
   // ───────────────────────── state ─────────────────────────
-  var store = null, dialectNames = {}, route = {name: 'main'}, searchQuery = '', mainScroll = 0, deferredPrompt = null;
+  var store = null, dialectNames = {}, route = {name: 'main'}, searchQuery = '', mainScroll = 0, deferredPrompt = null, dialectCache = {};
 
   function dname(id) { return dialectNames[id]; }
   function buildDialectNames() {
@@ -360,7 +363,13 @@
         '<div id="s1"' + (step === 1 ? '' : ' hidden') + '>' +
         '<label class="field"><span>' + esc(T('register_name')) + '</span><input id="rName" autocomplete="name" value="' + esc(name) + '"></label>' +
         '<label class="field"><span>' + esc(T('register_email')) + '</span><input id="rEmail" type="email" dir="ltr" autocomplete="email" value="' + esc(email) + '"></label>' +
-        '<button class="btn" id="send">' + esc(T('register_send_code')) + '</button></div>' +
+        '<button class="btn" id="send">' + esc(T('register_send_code')) + '</button>' +
+        (TG_ON ? '<p class="center sub">' + esc(T('register_or')) + '</p><button class="btn tg" id="tgBtn">' + esc(T('register_telegram')) + '</button>' : '') + '</div>' +
+        '<div id="s3"' + (step === 3 ? '' : ' hidden') + '><p class="pre">' + esc(T('register_tg_wait', '@' + CFG.telegramBot)) + '</p>' +
+        '<button class="btn tg" id="tgOpen">' + esc(T('register_tg_open_again')) + '</button>' +
+        '<label class="field"><span>' + esc(T('register_code')) + '</span><input id="tgCode" inputmode="numeric" maxlength="6" class="code" dir="ltr"></label>' +
+        '<button class="btn" id="tgVerify">' + esc(T('register_verify')) + '</button>' +
+        '<div class="row2"><button class="linkbtn" id="tgBack">' + esc(T('register_use_email')) + '</button></div></div>' +
         '<div id="s2"' + (step === 2 ? '' : ' hidden') + '><p>' + esc(T('register_code_sent', email)) + '</p>' +
         '<label class="field"><span>' + esc(T('register_code')) + '</span><input id="rCode" inputmode="numeric" maxlength="6" class="code" dir="ltr"></label>' +
         '<button class="btn" id="verify">' + esc(T('register_verify')) + '</button>' +
@@ -371,8 +380,37 @@
       $('#privacy').onclick = function () { window.open(CFG.website + 'privacy', '_blank'); };
       $('#send').onclick = send; $('#verify').onclick = verify; $('#resend').onclick = send;
       $('#change').onclick = function () { step = 1; draw(); };
+      if (TG_ON) {
+        $('#tgBtn').onclick = function () { step = 3; draw(); tgOpen(); };
+        $('#tgOpen').onclick = tgOpen; $('#tgVerify').onclick = tgVerify;
+        $('#tgBack').onclick = function () { step = 1; draw(); };
+      }
       tick();
     }
+    function tgOpen() { window.open('https://t.me/' + CFG.telegramBot, '_blank'); }
+    // Same as the desktop program: the bot sends a 6-digit code; the desktop script checks it.
+    function tgVerify() {
+      var code = $('#tgCode').value.trim();
+      if (!/^\d{6}$/.test(code)) return err(T('register_invalid_code'));
+      busy(true);
+      fetch(CFG.telegramServer, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'},
+        body: JSON.stringify({action: 'telegram_verify', machine_id: deviceId(), code: code, version: 'web-' + CFG.version,
+          hostname: isIOS ? (/iPad/.test(ua) ? 'iPad' : 'iPhone') : (navigator.platform || 'browser'),
+          platform: isIOS ? 'ios' : 'web', lang: P.lang})})
+        .then(function (r) { return r.text(); })
+        .then(function (t) {
+          var j; try { j = JSON.parse(t); } catch (e) { throw {server: false}; }
+          if (j.status === 'approved' && String(j.email || '').indexOf('tg:') === 0) {
+            lsSet('reg', {name: j.name || 'Telegram', email: j.email, token: 'tg', at: Date.now()});
+            toast(T('register_done')); return done();
+          }
+          busy(false);
+          if (j.status === 'wrong_code' || j.status === 'code_expired') return err(T('register_invalid_code'));
+          err(T('register_error', (j.status || 'server_error') + (j.message ? ': ' + j.message : '')));
+        })
+        .catch(function () { busy(false); err(T('network_error')); });
+    }
+
     function tick() {
       var b = $('#resend'); if (!b) return;
       var left = Math.ceil((resendAt - Date.now()) / 1000);
@@ -468,6 +506,7 @@
   function openStore(bytes) {
     return sql().then(function (SQL) {
       store = new KPCore.Store(SQL, bytes);
+      dialectCache = {};
       store.collections();
       buildDialectNames();
     });
@@ -627,10 +666,12 @@
 
   function showCollections() {
     var list = $('#list'), idxBar = $('#index'), empty = $('#empty');
-    var all = store.collections().filter(function (c) { return P.dialect === 0 || (c.mask & (1 << P.dialect)) || c.dialect === P.dialect; });
+    // "All dialects" → collections; one dialect → that dialect's own proverbs
+    var dmode = P.dialect > 0;
+    var all = dmode ? (dialectCache[P.dialect] || (dialectCache[P.dialect] = store.proverbsOfDialect(P.dialect))) : store.collections();
     var items = [], letters = [], letterPos = {};
-    if (P.daily && P.dialect === 0 && P.sort === 0) items.push({t: 'd', c: daily()});
-    if (P.sort === 1) {
+    if (P.daily && !dmode && P.sort === 0) items.push({t: 'd', c: daily()});
+    if (P.sort === 1 && !dmode) {
       all.slice().sort(function (a, b) { return b.proverbs - a.proverbs; }).forEach(function (c) { items.push({t: 'r', c: c}); });
     } else {
       for (var i = 0; i < all.length;) {
@@ -638,7 +679,7 @@
         while (j < all.length && all[j].letter === l) j++;
         if (!(l in letterPos)) { letterPos[l] = items.length; letters.push(l); }
         items.push({t: 'h', l: l, n: j - i});
-        for (var k = i; k < j; k++) items.push({t: 'r', c: all[k]});
+        for (var k = i; k < j; k++) items.push({t: dmode ? 'p' : 'r', c: all[k]});
         i = j;
       }
     }
@@ -648,6 +689,9 @@
       if (it.t === 'd') return '<div class="daily" data-cid="' + it.c.id + '"><div class="dt">' + ICON.today + '<b>' + esc(T('proverb_of_day')) +
         '</b><button data-share="' + it.c.id + '" aria-label="' + esc(T('share')) + '">' + ICON.share + '</button></div><div class="pt big" dir="rtl">' +
         esc(it.c.text) + '</div><div class="meta"><span>' + esc(counts(it.c)) + '</span></div></div>';
+      if (it.t === 'p') return '<div class="row" data-pid="' + it.c.proverbId + '" data-hcid="' + it.c.collectionId + '" data-l="' + esc(it.c.letter) +
+        '" data-text="' + esc(it.c.text) + '"><div class="pt" dir="rtl"' + (P.colorDialect ? ' style="color:' + dColor(it.c.dialect) + '"' : '') + '>' + esc(it.c.text) +
+        '</div>' + (it.c.title !== it.c.text ? '<div class="meta"><span dir="rtl" class="where">↲ ' + esc(it.c.title) + '</span></div>' : '') + '</div>';
       return rowHtml(it.c);
     });
     list.scrollTop = mainScroll;
@@ -838,7 +882,7 @@
       '<div class="pt" dir="rtl" id="preview">' + esc(T('text_size_preview')) + '</div></div>' +
       sw('sDialect', P.showDialect, 'settings_show_dialect') + sw('sColor', P.colorDialect, 'settings_color_dialect') + sw('sDaily', P.daily, 'settings_daily') +
       '<h4>' + esc(T('settings_updates')) + '</h4><button class="set" id="sUpd"><span>' + esc(T('check_updates')) + '</span><small id="sVer"></small></button>' +
-      '<h4>' + esc(T('settings_account')) + '</h4><div class="set col"><span>' + esc(reg ? reg.name + ' — ' + reg.email : T('account_unregistered')) + '</span></div>' +
+      '<h4>' + esc(T('settings_account')) + '</h4><div class="set col"><span>' + esc(reg ? reg.name + ' — ' + (String(reg.email).indexOf('tg:') === 0 ? 'Telegram' : reg.email) : T('account_unregistered')) + '</span></div>' +
       '<button class="set" id="sPriv"><span>' + esc(T('privacy')) + '</span><small>' + esc(T('privacy_summary')) + '</small></button></main>';
     idbGet('dbmeta').then(function (m) { $('#sVer') && ($('#sVer').textContent = T('versions_line', CFG.version, (m && m.version) || '—')); });
     $('#sLang').onchange = function () { setPref('lang', this.value); applyLook(); buildDialectNames(); renderSettings(); };
@@ -886,7 +930,7 @@
   // ───────────────────────── start ─────────────────────────
   function checkin() {
     var reg = ls('reg', null), last = ls('lastCheckin', 0);
-    if (!reg || Date.now() - last < 7 * 864e5) return;
+    if (!reg || String(reg.email).indexOf('tg:') === 0 || Date.now() - last < 7 * 864e5) return;
     lsSet('lastCheckin', Date.now());
     idbGet('dbmeta').then(function (m) {
       server({action: 'checkin', email: reg.email, token: reg.token, db_version: (m && m.version) || ''}).catch(function () {});
