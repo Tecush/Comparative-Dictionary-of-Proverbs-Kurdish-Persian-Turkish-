@@ -1,7 +1,7 @@
 {
   "db": {
     "version": "20260929",
-    "url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.1/kurdish_proverbs_mobile.kpdb",
+    "url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.1.0/kurdish_proverbs_mobile.kpdb",
     "size": 16045729,
     "uncompressed_size": 48619520,
     "sha256": "190aa713737fe12bdaf0f3c8568dbc05c06f48a67f02280e8dbec33e4099ce2f",
@@ -13,13 +13,14 @@
   },
   "app": {
     "version_code": 3,
-    "version_name": "2.0.1",
-    "released": "2026-09-29",
-    "apk_url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.1/KurdishProverbs-v2.0.1.apk",
-    "apk_size": 2189630,
-    "apk_sha256": "1d05ab666ab3e3a3c1db5830d8c3e2c5ce35831e90c76a75472de8b25dec452f",
+    "version_name": "2.1.0",
+    "released": "2026-10-10",
+    "apk_url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.1.0/KurdishProverbs-v2.1.0.apk",
+    "apk_size": 2198106,
+    "apk_sha256": "2f69e532df579c1e5a088cbb2b76d2145333be46de7b5b249c86250505260bf9",
     "notes": {
-      "en": "Corrected dialect names: Kurmanji Rojava û Bakur, Leki, Gerrusî, Xorasan."
+      "en": "Corrected dialect names: Kurmanji Rojava û Bakur, Leki, Gerrusî, Xorasan. Dictionary updates now install automatically. Registration with Telegram.",
+      "ckb": "ناوی شێوەزارەکان ڕاستکرانەوە: کرمانجی ڕۆژئاوا و باکوور، لەکی، گەڕووسی، خۆراسان. نوێکردنەوەی فەرهەنگ ئێستا خۆکارە. خۆتۆمارکردن بە تێلێگرام."
     }
   }
 }
