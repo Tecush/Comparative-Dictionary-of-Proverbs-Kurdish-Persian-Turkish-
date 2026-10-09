@@ -1,0 +1,86 @@
+/*
+ * app/build.gradle — Kurdish Proverbs for Android
+ *
+ * VERSIONING
+ *   Every release: increase versionCode by 1 and set versionName.
+ *   The same two numbers go into latest_android.json (the release tool does
+ *   this for you: tools/kp_android_release.py apk ...).
+ *
+ * SECRETS (never committed to GitHub — see .gitignore)
+ *   secrets.properties   → server URL + HMAC secret for registration + database key
+ *   The signing key (.jks) is chosen in Android Studio's "Generate Signed APK" window.
+ */
+plugins {
+    id 'com.android.application'
+}
+
+def loadProps(String fileName) {
+    def props = new Properties()
+    def f = rootProject.file(fileName)
+    if (f.exists()) f.withInputStream { props.load(it) }
+    return props
+}
+def secrets  = loadProps('secrets.properties')
+
+android {
+    namespace 'com.tecush.kurdishproverbs'
+    compileSdk 36
+
+    defaultConfig {
+        applicationId "com.tecush.kurdishproverbs"   // keep this ID forever (the app's identity)
+        minSdk 26                                     // Android 8.0, as stated on the website
+        targetSdk 36                                  // required by Google Play since 31 Aug 2026
+        versionCode 3
+        versionName "2.1.0"
+
+        buildConfigField "String", "REGISTRATION_URL", "\"${secrets.getProperty('kp.registrationUrl', '')}\""
+        buildConfigField "String", "HMAC_SECRET",      "\"${secrets.getProperty('kp.hmacSecret', '')}\""
+        // Telegram bot username without @ (optional; empty = no Telegram button)
+        buildConfigField "String", "TELEGRAM_BOT",     "\"${secrets.getProperty('kp.telegramBot', '')}\""
+        // Web app URL of the DESKTOP registration script (license_server.gs) — it owns the bot's webhook
+        buildConfigField "String", "TELEGRAM_SERVER_URL", "\"${secrets.getProperty('kp.telegramServerUrl', '')}\""
+        // Database encryption key — created automatically by tools/kp_android_release.py (Part D)
+        buildConfigField "String", "DB_KEY",           "\"${secrets.getProperty('kp.dbKey', '')}\""
+        buildConfigField "String", "MANIFEST_URL",
+                "\"https://raw.githubusercontent.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/main/latest_android.json\""
+        buildConfigField "String", "WEBSITE_URL",
+                "\"https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/\""
+        buildConfigField "String", "RELEASES_URL",
+                "\"https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases\""
+        buildConfigField "String", "CONTACT_EMAIL", "\"kurdishproverbs2026@gmail.com\""
+    }
+
+    // Signing: NOT configured here on purpose. Release APKs are signed with
+    // Build → Generate Signed App Bundle / APK (ANDROID_GUIDE.md, Parts B and F2),
+    // so the project never needs a key file to open, sync or build.
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            applicationIdSuffix ".debug"      // debug builds install next to the real app
+            versionNameSuffix "-debug"
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'androidx.activity:activity:1.9.3'
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+    implementation 'androidx.drawerlayout:drawerlayout:1.2.0'
+    implementation 'com.google.android.material:material:1.12.0'
+}

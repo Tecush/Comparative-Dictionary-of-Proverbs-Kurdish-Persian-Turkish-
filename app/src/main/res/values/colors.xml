@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LIGHT theme colors. Dark versions: values-night/colors.xml.
+     Text colors meet WCAG AA contrast (4.5:1) on their backgrounds. -->
+<resources>
+    <!-- Brand (same greens as version 1.0) -->
+    <color name="colorPrimary">#1B5E20</color>
+    <color name="colorPrimaryVariant">#145214</color>
+    <color name="colorAccent">#43A047</color>
+    <color name="titleBar">#1B5E20</color>
+    <color name="titleBarText">#FFFFFF</color>
+    <color name="headerBackground">#2E7D32</color>
+    <color name="headerText">#FFFFFF</color>
+    <color name="badgeBackground">#33FFFFFF</color>
+
+    <!-- Surfaces and text -->
+    <color name="background">#FAFAFA</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#616161</color>
+    <color name="divider">#E0E0E0</color>
+    <color name="searchBoxBackground">#FFFFFF</color>
+    <color name="link">#2E7D32</color>
+    <color name="error">#C62828</color>
+
+    <!-- Special rows -->
+    <color name="representativeBackground">#F1F8E9</color>
+    <color name="accentBar">#2E7D32</color>
+    <color name="dailyCard">#E8F5E9</color>
+    <color name="dailyCardText">#1B5E20</color>
+    <color name="flashHighlight">#FFF59D</color>
+    <color name="searchHighlightBg">#FFF176</color>
+    <color name="searchHighlightFg">#000000</color>
+    <color name="letterBubble">#E61B5E20</color>
+
+    <!-- Alphabet index bar -->
+    <color name="indexBarBackground">#AA1B5E20</color>
+    <color name="indexBarText">#DDFFFFFF</color>
+    <color name="indexBarActive">#B9F6CA</color>
+
+    <!-- Dialects: desktop palette, darkened where needed for contrast -->
+    <color name="dialect_1">#140DCC</color>  <!-- Sorani -->
+    <color name="dialect_2">#BD0104</color>  <!-- Hawrami -->
+    <color name="dialect_3">#1078A2</color>  <!-- Gerrusî (Bijar) -->
+    <color name="dialect_4">#AA5C10</color>  <!-- Kurmanji Rojava û Bakur -->
+    <color name="dialect_5">#037F6E</color>  <!-- Kalhori -->
+    <color name="dialect_6">#28811F</color>  <!-- Kurmanji Xorasan -->
+    <color name="dialect_7">#903AFF</color>  <!-- Leki/Lory -->
+    <color name="dialect_8">#2E6103</color>  <!-- Persian -->
+    <color name="dialect_9">#C22468</color>  <!-- Turkish -->
+    <color name="dialect_10">#6D4C41</color>
+    <color name="dialect_11">#00695C</color>
+    <color name="dialect_12">#AD1457</color>
+
+    <color name="ic_launcher_background">#FAFCF5</color>
+</resources>
