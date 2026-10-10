@@ -347,8 +347,14 @@
       });
   }
 
+  /** Codes typed on Kurdish / Persian / Arabic keyboards (٠-٩, ۰-۹) → 0-9; everything else removed. */
+  function normCode(c) {
+    return String(c || '').replace(/[\u0660-\u0669]/g, function (d) { return d.charCodeAt(0) - 0x0660; })
+      .replace(/[\u06F0-\u06F9]/g, function (d) { return d.charCodeAt(0) - 0x06F0; }).replace(/\D/g, '');
+  }
+
   function screenRegister(done) {
-    var step = 1, resendAt = 0, timer;
+    var step = 1, resendAt = 0, timer, tgToken = null, tgAt = 0, tgTimer = null, tgBusy = false;
     function describe(e) {
       if (!e.server) return T('network_error');
       return {bad_code: T('register_invalid_code'), expired: T('register_invalid_code'), invalid_email: T('register_invalid_email'),
@@ -383,27 +389,55 @@
       if (TG_ON) {
         $('#tgBtn').onclick = function () { step = 3; draw(); tgOpen(); };
         $('#tgOpen').onclick = tgOpen; $('#tgVerify').onclick = tgVerify;
-        $('#tgBack').onclick = function () { step = 1; draw(); };
+        $('#tgBack').onclick = function () { tgStop(); tgToken = null; step = 1; draw(); };
       }
       tick();
     }
-    function tgOpen() { window.open('https://t.me/' + CFG.telegramBot, '_blank'); }
+    // One tap: t.me/<bot>?start=kp<token> shows "Start" (also in a chat used before). After Start the
+    // desktop script links the token to the user; this page checks every few seconds and finishes by itself.
+    // Fallback: the bot also sends a 6-digit code that can be typed in.
+    function tgOpen() {
+      if (!tgToken || Date.now() - tgAt > 15 * 60000) {
+        var r = new Uint8Array(8); crypto.getRandomValues(r);
+        tgToken = Array.from(r).map(function (x) { return x.toString(16).padStart(2, '0'); }).join('');
+        tgAt = Date.now();
+      }
+      window.open('https://t.me/' + CFG.telegramBot + '?start=kp' + tgToken, '_blank');
+      tgStop(); tgTimer = setInterval(tgCheck, 3000);
+    }
+    function tgStop() { clearInterval(tgTimer); tgTimer = null; }
+    function tgPost(body) {
+      body.machine_id = deviceId(); body.version = 'web-' + CFG.version; body.lang = P.lang;
+      body.hostname = isIOS ? (/iPad/.test(ua) ? 'iPad' : 'iPhone') : (navigator.platform || 'browser');
+      body.platform = isIOS ? 'ios' : 'web';
+      return fetch(CFG.telegramServer, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify(body)})
+        .then(function (r) { return r.text(); })
+        .then(function (t) { try { return JSON.parse(t); } catch (e) { throw {server: false}; } });
+    }
+    function tgApproved(j) {
+      tgStop();
+      lsSet('reg', {name: j.name || 'Telegram', email: j.email, token: 'tg', at: Date.now()});
+      toast(T('register_done')); done();
+    }
+    function tgCheck() {
+      if (step !== 3 || !tgToken || tgBusy || document.visibilityState !== 'visible') return;
+      if (Date.now() - tgAt > 15 * 60000) return tgStop();          // the code field still works
+      tgBusy = true;
+      tgPost({action: 'telegram_status', token: tgToken}).then(function (j) {
+        tgBusy = false;
+        if (j.status === 'approved' && String(j.email || '').indexOf('tg:') === 0) return tgApproved(j);
+        if (j.status === 'revoked' || j.status === 'limit_reached') { tgStop(); err(T('register_error', j.status + (j.message ? ': ' + j.message : ''))); }
+      }, function () { tgBusy = false; });                          // no network: try again next time
+    }
+    document.addEventListener('visibilitychange', function () { if (step === 3 && tgTimer) tgCheck(); });
     // Same as the desktop program: the bot sends a 6-digit code; the desktop script checks it.
     function tgVerify() {
-      var code = $('#tgCode').value.trim();
+      var code = normCode($('#tgCode').value);
       if (!/^\d{6}$/.test(code)) return err(T('register_invalid_code'));
       busy(true);
-      fetch(CFG.telegramServer, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'},
-        body: JSON.stringify({action: 'telegram_verify', machine_id: deviceId(), code: code, version: 'web-' + CFG.version,
-          hostname: isIOS ? (/iPad/.test(ua) ? 'iPad' : 'iPhone') : (navigator.platform || 'browser'),
-          platform: isIOS ? 'ios' : 'web', lang: P.lang})})
-        .then(function (r) { return r.text(); })
-        .then(function (t) {
-          var j; try { j = JSON.parse(t); } catch (e) { throw {server: false}; }
-          if (j.status === 'approved' && String(j.email || '').indexOf('tg:') === 0) {
-            lsSet('reg', {name: j.name || 'Telegram', email: j.email, token: 'tg', at: Date.now()});
-            toast(T('register_done')); return done();
-          }
+      tgPost({action: 'telegram_verify', code: code})
+        .then(function (j) {
+          if (j.status === 'approved' && String(j.email || '').indexOf('tg:') === 0) return tgApproved(j);
           busy(false);
           if (j.status === 'wrong_code' || j.status === 'code_expired') return err(T('register_invalid_code'));
           err(T('register_error', (j.status || 'server_error') + (j.message ? ': ' + j.message : '')));
@@ -429,7 +463,7 @@
       }, function (e) { busy(false); err(describe(e)); });
     }
     function verify() {
-      var code = $('#rCode').value.trim(), name = $('#rName').value.trim(), email = $('#rEmail').value.trim().toLowerCase();
+      var code = normCode($('#rCode').value), name = $('#rName').value.trim(), email = $('#rEmail').value.trim().toLowerCase();
       if (!/^\d{6}$/.test(code)) return err(T('register_invalid_code'));
       busy(true);
       server({action: 'verify', name: name, email: email, code: code}).then(function (j) {
