@@ -328,7 +328,7 @@ This project is a collaboration spanning generations, combining lifelong academi
 ### 🌟 If this project helps you connect with your heritage, please consider giving it a Star! 🌟
 
 <a href="https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/latest">
-  <img src="https://img.shields.io/badge/⬇️%20Download%20Now-KP--v2.0.1-success?style=for-the-badge" alt="Download">
+  <img src="https://img.shields.io/badge/⬇️&nbsp;Download the latest release&nbsp;⬇️>
 </a>
 
 <p align="center">
