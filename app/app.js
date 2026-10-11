@@ -308,6 +308,19 @@
     });
   }
 
+  /** Opens the "Add to Home Screen" guide; "continue in the browser" returns to the dictionary. */
+  function showInstallGuide() { screenInstall(function () { render(); }); }
+
+  /** Green bar on the main screen while the dictionary runs in Safari instead of as a Home Screen app. */
+  function installBanner() {
+    if (!isIOS || isStandalone) return '';
+    try { if (sessionStorage.getItem('kp_hideBanner')) return ''; } catch (e) {}
+    return '<div id="ibanner" style="display:flex;align-items:center;gap:8px;margin:8px 12px 0;padding:8px 10px;border-radius:12px;' +
+      'background:var(--daily);color:var(--daily-text);font-size:13px"><span style="flex:1">📲 ' + esc(T('install_banner')) + '</span>' +
+      '<button id="ibtn" style="background:var(--primary);color:#fff;border-radius:16px;padding:6px 12px;font-weight:700;white-space:nowrap">' +
+      esc(T('install_btn')) + '</button><button id="ix" aria-label="' + esc(T('cancel')) + '" style="padding:4px 6px;font-size:18px;line-height:1">×</button></div>';
+  }
+
   function screenInstall(onSkip) {
     var link = location.href.split('#')[0];
     app.innerHTML = titlebar(T('install_title')) +
@@ -572,7 +585,7 @@
        ['sort0', 'sort_alpha', P.sort === 0], ['sort1', 'sort_size', P.sort === 1], ['-'],
        ['settings', 'settings'], ['updates', 'check_updates'], ['about', 'about'], ['-'],
        ['website', 'website'], ['shareapp', 'share_app'], ['contact', 'contact']].concat(
-        deferredPrompt ? [['install', 'install_btn']] : []).map(function (it) {
+        (deferredPrompt || (isIOS && !isStandalone)) ? [['install', 'install_btn']] : []).map(function (it) {
         return it[0] === '-' ? '<hr>' : '<button data-d="' + it[0] + '"' + (it[2] ? ' class="on"' : '') + '>' + esc(T(it[1])) + '</button>';
       }).join('') + '</nav>';
     document.body.appendChild(d);
@@ -592,7 +605,10 @@
       else if (a === 'website') window.open(CFG.website, '_blank');
       else if (a === 'shareapp') shareText(T('share_app_text', location.href.split('#')[0]));
       else if (a === 'contact') location.href = 'mailto:' + CFG.email + '?subject=' + encodeURIComponent(T('app_name') + ' (web ' + CFG.version + ')');
-      else if (a === 'install' && deferredPrompt) { deferredPrompt.prompt(); deferredPrompt = null; }
+      else if (a === 'install') {
+        if (deferredPrompt) { deferredPrompt.prompt(); deferredPrompt = null; }
+        else showInstallGuide();
+      }
     });
   }
   function closeDrawer() { var d = $('.drawer-ov'); if (d) { d.classList.remove('open'); setTimeout(function () { d.remove(); }, 200); } }
@@ -627,12 +643,17 @@
         return '<button class="chip' + (P.dialect === d.id ? ' on' : '') + '" data-dl="' + d.id + '" style="--c:' + dColor(d.id) + '">' + esc(dname(d.id)) + '</button>';
       }).join('');
     app.innerHTML = titlebar(T('app_name'), {menu: true, actions: [['fav', 'star', 'favorites'], ['stats', 'stats', 'statistics']]}) +
+      installBanner() +
       '<div class="searchbox">' + ICON.search + '<input id="q" type="search" enterkeyhint="search" placeholder="' + esc(T('search_hint')) + '" value="' + esc(searchQuery) + '">' +
       '<button id="qc" aria-label="' + esc(T('clear')) + '"' + (searchQuery ? '' : ' hidden') + '>' + ICON.clear + '</button></div>' +
       '<div class="chips scroll" id="chips">' + chips + '</div>' +
       '<div class="listwrap"><div id="list" class="list"></div><div id="index" class="index" hidden></div><div id="bubble" class="bubble" hidden></div>' +
       '<div id="empty" class="empty" hidden></div></div>';
 
+    if ($('#ibtn')) {
+      $('#ibtn').onclick = showInstallGuide;
+      $('#ix').onclick = function () { try { sessionStorage.setItem('kp_hideBanner', '1'); } catch (e) {} $('#ibanner').remove(); };
+    }
     var q = $('#q'), timer;
     q.addEventListener('input', function () {
       searchQuery = q.value; $('#qc').hidden = !q.value;
