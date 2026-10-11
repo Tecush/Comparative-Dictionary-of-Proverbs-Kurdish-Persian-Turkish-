@@ -1,9 +1,9 @@
 {
   "version": "2.1.0",
-  "released": "2026-10-10",
+  "released": "2026-10-11",
   "download_url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/latest",
   "notes": "",
   "installer_url": "https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.1.0/KurdishProverbs_Setup_v2.1.0.exe",
-  "sha256": "59847ef2462f345f288e9e95c2376a76f464aa68d6231687e5f127de78a68141",
-  "size": 88148685
+  "sha256": "25b63fd3f02eb782f7f13eff5ca9354ae1099f8298cd484968609221db31a773",
+  "size": 88145715
 }
