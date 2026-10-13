@@ -105,7 +105,7 @@
     <string name="setup_title">Sözlüğü indir</string>
     <string name="share">Paylaş</string>
     <string name="share_app">Uygulamayı paylaş</string>
-    <string name="share_app_text">Karşılaştırmalı Atasözleri Sözlüğü — Kürtçe lehçelerde, Farsça ve Türkçe yaklaşık 112.000 atasözü. Android ve Windows için ücretsiz:\n%1$s</string>
+    <string name="share_app_text">Karşılaştırmalı Atasözleri Sözlüğü — Kürtçe lehçelerde, Farsça ve Türkçe yaklaşık 120.000 atasözü. Android ve Windows için ücretsiz:\n%1$s</string>
     <string name="share_footer">— Karşılaştırmalı Atasözleri Sözlüğü (Halil Muhammedi)\n%1$s</string>
     <string name="sort_alpha">Alfabetik</string>
     <string name="sort_size">Önce en büyük koleksiyonlar</string>
