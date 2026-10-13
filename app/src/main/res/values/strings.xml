@@ -105,7 +105,7 @@
     <string name="setup_title">Download the dictionary</string>
     <string name="share">Share</string>
     <string name="share_app">Share the app</string>
-    <string name="share_app_text">Comparative Dictionary of Proverbs — about 112,000 proverbs in Kurdish dialects, Persian and Turkish. Free for Android and Windows:\n%1$s</string>
+    <string name="share_app_text">Comparative Dictionary of Proverbs — about 120,000 proverbs in Kurdish dialects, Persian and Turkish. Free for Android and Windows:\n%1$s</string>
     <string name="share_footer">— Comparative Dictionary of Proverbs (Khalil Mohammadi)\n%1$s</string>
     <string name="sort_alpha">Alphabetical</string>
     <string name="sort_size">Largest collections first</string>
