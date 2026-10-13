@@ -38,7 +38,7 @@ window.KP_I18N = {
 "privacy_summary": "What is stored and why (opens the website)",
 "contact": "Contact us",
 "share_app": "Share the app",
-"share_app_text": "Comparative Dictionary of Proverbs — about 112,000 proverbs in Kurdish dialects, Persian and Turkish. Free for Android and Windows:\n%1$s",
+"share_app_text": "Comparative Dictionary of Proverbs — about 120,000 proverbs in Kurdish dialects, Persian and Turkish. Free for Android and Windows:\n%1$s",
 "share_footer": "— Comparative Dictionary of Proverbs (Khalil Mohammadi)\n%1$s",
 "sort_alpha": "Alphabetical",
 "sort_size": "Largest collections first",
