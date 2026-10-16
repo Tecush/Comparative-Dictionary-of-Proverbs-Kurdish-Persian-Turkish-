@@ -29,6 +29,48 @@
     return o;
   })();
 
+  // Texts for "Suggest a correction" (added to the five interface languages)
+  (function () {
+    var X = {
+      en: {fb_suggest: 'Suggest a correction', fb_category: 'What is wrong?', fb_comment: 'Your note (what should it be?)',
+           fb_all: 'This applies everywhere this proverb appears (%1$s other places)', fb_send: 'Send',
+           fb_thanks: 'Thank you! Your suggestion was sent.', fb_saved: 'Saved — it will be sent automatically when you are online.',
+           fb_where: 'Collection %1$s · position %2$s · %3$s · %4$s', fb_need_comment: 'Please write a short note.',
+           cat_spelling: 'Spelling', cat_dialect: 'Dialect', cat_role: 'Role (main / synonym / reference)', cat_translation: 'Translation',
+           cat_duplicate: 'Duplicate', cat_missing: 'Something is missing', cat_meaning: 'Meaning', cat_other: 'Other',
+           daily_hide_today: 'Hide for today', daily_hide_always: 'Don\'t show any more', daily_off_hint: 'You can turn it on again in Settings.'},
+      ckb: {fb_suggest: 'پێشنیاری ڕاستکردنەوە', fb_category: 'چی هەڵەیە؟', fb_comment: 'تێبینییەکەت (دەبێت چۆن بێت؟)',
+           fb_all: 'ئەمە بۆ هەموو ئەو شوێنانەیە کە ئەم پەندە تێیاندا هاتووە (%1$s شوێنی تر)', fb_send: 'ناردن',
+           fb_thanks: 'سوپاس! پێشنیارەکەت نێردرا.', fb_saved: 'پاشەکەوت کرا — کاتێک ئینتەرنێتت هەبێت خۆکارانە دەنێردرێت.',
+           fb_where: 'کۆکراوە %1$s · شوێن %2$s · %3$s · %4$s', fb_need_comment: 'تکایە تێبینییەکی کورت بنووسە.',
+           cat_spelling: 'ڕێنووس', cat_dialect: 'شێوەزار', cat_role: 'ڕۆڵ (سەرەکی / هاوواتا / ئاماژە)', cat_translation: 'وەرگێڕان',
+           cat_duplicate: 'دووبارە', cat_missing: 'شتێک کەمە', cat_meaning: 'مانا', cat_other: 'هی تر',
+           daily_hide_today: 'بۆ ئەمڕۆ بیشارەوە', daily_hide_always: 'چیتر پیشانی مەدە', daily_off_hint: 'دەتوانیت لە ڕێکخستنەکان دووبارە چالاکی بکەیتەوە.'},
+      kmr: {fb_suggest: 'Rastkirinekê pêşniyar bike', fb_category: 'Çi şaş e?', fb_comment: 'Nota te (divê çawa be?)',
+           fb_all: 'Ev ji bo hemû cihên ku ev pend tê de ye derbas dibe (%1$s cihên din)', fb_send: 'Bişîne',
+           fb_thanks: 'Spas! Pêşniyara te hate şandin.', fb_saved: 'Hate tomarkirin — dema ku înternet hebe bi xwe tê şandin.',
+           fb_where: 'Kom %1$s · cih %2$s · %3$s · %4$s', fb_need_comment: 'Ji kerema xwe notek kurt binivîse.',
+           cat_spelling: 'Rastnivîsîn', cat_dialect: 'Zarava', cat_role: 'Rol (sereke / hevwate / referans)', cat_translation: 'Werger',
+           cat_duplicate: 'Dubare', cat_missing: 'Tiştek kêm e', cat_meaning: 'Wate', cat_other: 'Yên din',
+           daily_hide_today: 'Ji bo îro veşêre', daily_hide_always: 'Êdî nîşan nede', daily_off_hint: 'Tu dikarî di Mîhengan de dîsa veke.'},
+      fa: {fb_suggest: 'پیشنهاد اصلاح', fb_category: 'چه چیزی نادرست است؟', fb_comment: 'یادداشت شما (درست آن چیست؟)',
+           fb_all: 'این مورد در همهٔ جاهایی که این ضرب‌المثل آمده صدق می‌کند (%1$s جای دیگر)', fb_send: 'ارسال',
+           fb_thanks: 'سپاس! پیشنهاد شما ارسال شد.', fb_saved: 'ذخیره شد — وقتی آنلاین شوید خودکار ارسال می‌شود.',
+           fb_where: 'مجموعه %1$s · جایگاه %2$s · %3$s · %4$s', fb_need_comment: 'لطفاً یک یادداشت کوتاه بنویسید.',
+           cat_spelling: 'املا', cat_dialect: 'گویش', cat_role: 'نقش (اصلی / مترادف / ارجاع)', cat_translation: 'ترجمه',
+           cat_duplicate: 'تکراری', cat_missing: 'چیزی کم است', cat_meaning: 'معنا', cat_other: 'دیگر',
+           daily_hide_today: 'برای امروز پنهان کن', daily_hide_always: 'دیگر نشان نده', daily_off_hint: 'می‌توانید دوباره آن را در تنظیمات فعال کنید.'},
+      tr: {fb_suggest: 'Düzeltme öner', fb_category: 'Ne yanlış?', fb_comment: 'Notunuz (doğrusu ne olmalı?)',
+           fb_all: 'Bu, atasözünün geçtiği her yer için geçerli (%1$s başka yer)', fb_send: 'Gönder',
+           fb_thanks: 'Teşekkürler! Öneriniz gönderildi.', fb_saved: 'Kaydedildi — çevrimiçi olduğunuzda otomatik gönderilecek.',
+           fb_where: 'Koleksiyon %1$s · sıra %2$s · %3$s · %4$s', fb_need_comment: 'Lütfen kısa bir not yazın.',
+           cat_spelling: 'Yazım', cat_dialect: 'Lehçe', cat_role: 'Rol (ana / eş anlamlı / atıf)', cat_translation: 'Çeviri',
+           cat_duplicate: 'Tekrar', cat_missing: 'Eksik bir şey var', cat_meaning: 'Anlam', cat_other: 'Diğer',
+           daily_hide_today: 'Bugünlük gizle', daily_hide_always: 'Artık gösterme', daily_off_hint: 'Ayarlar\'dan tekrar açabilirsiniz.'}
+    };
+    for (var l in X) { if (!KP_I18N[l]) KP_I18N[l] = {}; for (var k in X[l]) KP_I18N[l][k] = X[l][k]; }
+  })();
+
   var LANGS = ['ckb', 'kmr', 'fa', 'tr', 'en'];
   var LANG_NAMES = {ckb: 'کوردی (سۆرانی)', kmr: 'Kurdî (Kurmancî)', fa: 'فارسی', tr: 'Türkçe', en: 'English'};
   var DIALECT_COLORS = {
@@ -199,7 +241,7 @@
   }
   function shareProverb(s) { shareText(s + '\n\n' + T('share_footer', CFG.website)); }
 
-  function proverbActions(pid, text, cid) {
+  function proverbActions(pid, text, cid, entry) {
     var items = [
       [T('copy'), function () { copyText(text); }],
       [T('share'), function () { shareProverb(text); }],
@@ -209,6 +251,7 @@
       }],
       [T('details'), function () { go('#/p/' + pid); }]
     ];
+    if (fbOn()) items.push([T('fb_suggest'), function () { openFeedback(pid, text, cid, entry); }]);
     if (cid && route.name !== 'c') items.push([T('open_collection'), function () { go('#/c/' + cid + '/p' + pid); }]);
     sheet(text.length > 60 ? text.slice(0, 57) + '…' : text, items);
   }
@@ -624,6 +667,8 @@
     return all[seed % all.length];
   }
 
+  function todayKey() { var d = new Date(); return d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate(); }
+
   function counts(c) {
     var s = T('count_proverbs', num(c.proverbs));
     if (c.synonyms) s += '  ·  ' + T('count_synonyms', num(c.synonyms));
@@ -670,6 +715,14 @@
     });
     var list = $('#list');
     list.addEventListener('click', function (e) {
+      var dh = e.target.closest('[data-dhide]');
+      if (dh) {
+        e.stopPropagation();
+        return sheet(T('proverb_of_day'), [
+          [T('daily_hide_today'), function () { lsSet('dailyHiddenOn', todayKey()); mainScroll = 0; showCollections(); }],
+          [T('daily_hide_always'), function () { setPref('daily', false); mainScroll = 0; showCollections(); toast(T('daily_off_hint')); }]
+        ]);
+      }
       var r = e.target.closest('[data-cid]'), h = e.target.closest('[data-pid]'), s = e.target.closest('[data-share]');
       if (s) { e.stopPropagation(); return shareProverb(store.collection(+s.dataset.share).text); }
       if (h) go('#/c/' + (h.dataset.hcid || 0) + '/p' + h.dataset.pid);
@@ -725,7 +778,7 @@
     var dmode = P.dialect > 0;
     var all = dmode ? (dialectCache[P.dialect] || (dialectCache[P.dialect] = store.proverbsOfDialect(P.dialect))) : store.collections();
     var items = [], letters = [], letterPos = {};
-    if (P.daily && !dmode && P.sort === 0) items.push({t: 'd', c: daily()});
+    if (P.daily && !dmode && P.sort === 0 && ls('dailyHiddenOn', '') !== todayKey()) items.push({t: 'd', c: daily()});
     if (P.sort === 1 && !dmode) {
       all.slice().sort(function (a, b) { return b.proverbs - a.proverbs; }).forEach(function (c) { items.push({t: 'r', c: c}); });
     } else {
@@ -742,7 +795,8 @@
     var vl = virtualList(list, items, function (it) {
       if (it.t === 'h') return '<div class="lhead" data-l="' + esc(it.l) + '"><b>' + esc(it.l) + '</b><span>' + num(it.n) + '</span></div>';
       if (it.t === 'd') return '<div class="daily" data-cid="' + it.c.id + '"><div class="dt">' + ICON.today + '<b>' + esc(T('proverb_of_day')) +
-        '</b><button data-share="' + it.c.id + '" aria-label="' + esc(T('share')) + '">' + ICON.share + '</button></div><div class="pt big" dir="rtl">' +
+        '</b><button data-share="' + it.c.id + '" aria-label="' + esc(T('share')) + '">' + ICON.share + '</button>' +
+        '<button data-dhide="1" aria-label="' + esc(T('daily_hide_always')) + '">' + ICON.clear + '</button></div><div class="pt big" dir="rtl">' +
         esc(it.c.text) + '</div><div class="meta"><span>' + esc(counts(it.c)) + '</span></div></div>';
       if (it.t === 'p') return '<div class="row" data-pid="' + it.c.proverbId + '" data-hcid="' + it.c.collectionId + '" data-l="' + esc(it.c.letter) +
         '" data-text="' + esc(it.c.text) + '"><div class="pt" dir="rtl"' + (P.colorDialect ? ' style="color:' + dColor(it.c.dialect) + '"' : '') + '>' + esc(it.c.text) +
@@ -825,7 +879,7 @@
     });
     enableLongPress(list, function (t) {
       var r = t.closest('[data-eid]'); if (!r) return;
-      var en = ents[+r.dataset.i]; proverbActions(en.proverbId, en.text, c.id);
+      var en = ents[+r.dataset.i]; en.collectionId = c.id; proverbActions(en.proverbId, en.text, c.id, en);
     });
     $('[data-act="cshare"]').onclick = function (e) {
       e.stopPropagation();
@@ -969,6 +1023,78 @@
     }).catch(function () {});
   }
 
+  // ───────────────────────── feedback: "Suggest a correction" (shared spec with the desktop) ─────────────────────────
+  var FB_CATS = ['spelling', 'dialect', 'role', 'translation', 'duplicate', 'missing', 'meaning', 'other'];
+  function fbRole(e) { return e.rep ? 'representative' : e.syn ? 'synonym' : e.ref ? 'reference' : 'entry'; }
+  function fbRoleLabel(e) { return T(e.rep ? 'role_main' : e.syn ? 'role_synonym' : e.ref ? 'role_reference' : 'role_entry'); }
+  function fbDialectEn(id) { var d = store.dialects().filter(function (x) { return x.id === id; })[0]; return d ? (d.nameEn || d.nameKu) : ''; }
+  function fbOn() { return CFG.telegramServer.indexOf('https://') === 0; }
+
+  function openFeedback(pid, text, cid, entry) {
+    var e = entry && entry.entryId ? entry : store.entryFor(pid, cid);
+    if (!e) return toast(T('reference_missing'));
+    if (!e.collectionId) e.collectionId = cid;
+    var p = store.proverb(pid) || {dialect: 0};
+    var sibs = store.siblings(pid, e.entryId);
+    var where = T('fb_where', num(e.collectionId), num(e.order || 0), fbRoleLabel(e), dname(p.dialect) || '—');
+    var ov = document.createElement('div');
+    ov.className = 'sheet-ov';
+    ov.innerHTML = '<div class="sheet" style="padding:12px 16px calc(16px + env(safe-area-inset-bottom))">' +
+      '<h3 style="margin:4px 0 8px">' + esc(T('fb_suggest')) + '</h3>' +
+      '<div class="card" style="padding:12px"><div class="pt" dir="rtl" style="font-weight:700">' + esc(text) + '</div>' +
+      '<div class="sub" style="margin-top:6px">' + esc(where) + '</div>' +
+      '<div class="sub" dir="rtl">↲ ' + esc(store.title(e.collectionId)) + '</div></div>' +
+      '<label class="field"><span>' + esc(T('fb_category')) + '</span><select id="fbCat" style="width:100%;height:46px;border:1px solid var(--divider);' +
+      'border-radius:10px;background:var(--surface);padding:0 8px">' +
+      FB_CATS.map(function (c) { return '<option value="' + c + '">' + esc(T('cat_' + c)) + '</option>'; }).join('') + '</select></label>' +
+      '<label class="field"><span>' + esc(T('fb_comment')) + '</span><textarea id="fbText" rows="4" style="width:100%;border:1px solid var(--divider);' +
+      'border-radius:10px;background:var(--surface);padding:10px;font:inherit;color:var(--text)"></textarea></label>' +
+      (sibs.length ? '<label style="display:flex;gap:10px;align-items:flex-start;margin-top:12px"><input type="checkbox" id="fbAll" style="margin-top:4px">' +
+        '<span>' + esc(T('fb_all', num(sibs.length))) + '</span></label><div class="sub" dir="rtl" style="max-height:110px;overflow:auto;margin:6px 0 0 26px">' +
+        sibs.slice(0, 12).map(function (s) { return '• ' + esc(store.title(s.collectionId)) + ' <span dir="ltr">(' + num(s.collectionId) + ' · ' + esc(fbRoleLabel(s)) + ')</span>'; }).join('<br>') +
+        (sibs.length > 12 ? '<br>…' : '') + '</div>' : '') +
+      '<p class="error" id="fbErr" hidden></p>' +
+      '<button class="btn" id="fbSend">' + esc(T('fb_send')) + '</button>' +
+      '<button class="linkbtn" id="fbCancel" style="display:block;margin:6px auto 0">' + esc(T('cancel')) + '</button></div>';
+    document.body.appendChild(ov);
+    requestAnimationFrame(function () { ov.classList.add('open'); });
+    function close() { ov.classList.remove('open'); setTimeout(function () { ov.remove(); }, 200); }
+    ov.addEventListener('click', function (ev) { if (ev.target === ov) close(); });
+    $('#fbCancel', ov).onclick = close;
+    $('#fbSend', ov).onclick = function () {
+      var comment = $('#fbText', ov).value.trim();
+      if (!comment) { var er = $('#fbErr', ov); er.textContent = T('fb_need_comment'); er.hidden = false; return; }
+      var all = !!($('#fbAll', ov) && $('#fbAll', ov).checked), reg = ls('reg', {}) || {};
+      var report = {
+        action: 'feedback', sent_at: new Date().toISOString().slice(0, 19), version: CFG.version,
+        platform: isIOS ? 'ios' : 'web',
+        reporter_name: reg.name || '', reporter_contact: reg.email || '', machine_id: deviceId(),
+        collection_id: e.collectionId, entry_id: e.entryId, proverb_id: pid, paragraph_order: e.order || 0,
+        source_paragraph: (e.sourcePara === undefined || e.sourcePara === null) ? null : e.sourcePara, role: fbRole(e), dialect: fbDialectEn(p.dialect), proverb_text: text,
+        category: $('#fbCat', ov).value, comment: comment, applies_to_all: all,
+        other_count: sibs.length,
+        other_locations: sibs.map(function (s) {
+          return s.collectionId + ':' + s.entryId + ':' + (s.order || 0) + ':' + (s.sourcePara === null || s.sourcePara === undefined ? '' : s.sourcePara) + ':' + fbRole(s);
+        }).join('\n')
+      };
+      close();
+      fbSend(report).then(function () { toast(T('fb_thanks')); fbFlush(); }, function () { fbQueue(report); toast(T('fb_saved')); });
+    };
+  }
+
+  function fbSend(report) {
+    return fetch(CFG.telegramServer, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'}, body: JSON.stringify(report)})
+      .then(function (r) { return r.text(); })
+      .then(function (t) { var j = JSON.parse(t); if (j.status !== 'received') throw new Error(j.status || 'error'); });
+  }
+  function fbQueue(report) { var q = ls('fbq', []); q.push(report); lsSet('fbq', q.slice(-50)); }
+  /** Sends saved reports (called at start and after each successful report). */
+  function fbFlush() {
+    var q = ls('fbq', []);
+    if (!q.length || !fbOn()) return;
+    fbSend(q[0]).then(function () { lsSet('fbq', ls('fbq', []).slice(1)); fbFlush(); }, function () {});
+  }
+
   // ───────────────────────── app updates (service worker) ─────────────────────────
   var swReg = null;
   function checkAppUpdate() { if (swReg) swReg.update().catch(function () {}); }
@@ -983,14 +1109,23 @@
   window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); deferredPrompt = e; });
 
   // ───────────────────────── start ─────────────────────────
+  /** Usage, at most once a day: email users → apps' registration script; Telegram users → licence sheet ("check"). */
   function checkin() {
     var reg = ls('reg', null), last = ls('lastCheckin', 0);
-    if (!reg || String(reg.email).indexOf('tg:') === 0 || Date.now() - last < 7 * 864e5) return;
+    if (!reg || Date.now() - last < 20 * 3600e3) return;
     lsSet('lastCheckin', Date.now());
+    if (String(reg.email).indexOf('tg:') === 0) {
+      if (!fbOn()) return;
+      fetch(CFG.telegramServer, {method: 'POST', headers: {'Content-Type': 'text/plain;charset=utf-8'},
+        body: JSON.stringify({action: 'check', machine_id: deviceId(), version: 'web-' + CFG.version, platform: isIOS ? 'ios' : 'web'})})
+        .catch(function () {});
+      return;
+    }
     idbGet('dbmeta').then(function (m) {
       server({action: 'checkin', email: reg.email, token: reg.token, db_version: (m && m.version) || ''}).catch(function () {});
     });
   }
+
 
   function opening() {
     app.innerHTML = '<div class="splash"><img src="icons/icon-192.png" alt=""><div class="spinner"></div><p>' + esc(T('opening')) + '</p></div>';
@@ -1018,7 +1153,7 @@
       openStore(bytes).then(function () {
         render();
         if (ls('justUpdated', false)) { lsSet('justUpdated', false); toast(T('app_updated')); }
-        setTimeout(function () { backgroundDbUpdate(false); checkin(); }, 3000);
+        setTimeout(function () { backgroundDbUpdate(false); checkin(); fbFlush(); }, 3000);
       }).catch(function () {
         screenSetup(function (b) { opening(); finish(b); });
       });

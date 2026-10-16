@@ -113,6 +113,16 @@
     this.db = new SQL.Database(bytes);
     this._collections = null; this._byId = null; this._dialects = null;
   }
+  /** True if table has the column (e.g. source_paragraph exists only after a Stage 2 rebuild). */
+  Store.prototype.hasColumn = function (table, col) {
+    this._cols = this._cols || {};
+    if (!this._cols[table]) this._cols[table] = this.rows('PRAGMA table_info(' + table + ')').map(function (r) { return r[1]; });
+    return this._cols[table].indexOf(col) >= 0;
+  };
+  Store.prototype.srcParaSql = function () {
+    return this.hasColumn('collection_entries', 'source_paragraph') ? 'e.source_paragraph' : 'NULL';
+  };
+
   Store.prototype.rows = function (sql, params) {
     var st = this.db.prepare(sql), out = [];
     try { if (params) st.bind(params); while (st.step()) out.push(st.get()); } finally { st.free(); }
@@ -148,10 +158,10 @@
     return this.rows(
       'SELECT e.entry_id, e.paragraph_order, e.is_representative, e.is_synonym, e.synonym_type, ' +
       'e.is_reference, e.reference_type, e.header_level, p.id, p.text, p.dialect_id, p.is_translation, ' +
-      'p.translation_language FROM collection_entries e JOIN proverbs p ON p.id = e.proverb_id ' +
+      'p.translation_language, ' + this.srcParaSql() + ' FROM collection_entries e JOIN proverbs p ON p.id = e.proverb_id ' +
       'WHERE e.collection_id = ? ORDER BY e.paragraph_order', [cid])
       .map(function (r) {
-        return {entryId: r[0], rep: r[2] === 1, syn: r[3] === 1, synType: r[4], ref: r[5] === 1, refType: r[6],
+        return {entryId: r[0], order: r[1], sourcePara: r[13] === undefined ? null : r[13], rep: r[2] === 1, syn: r[3] === 1, synType: r[4], ref: r[5] === 1, refType: r[6],
                 header: r[7], proverbId: r[8], text: r[9] || '', dialect: r[10], trans: r[11] === 1, transLang: r[12]};
       });
   };
@@ -169,6 +179,32 @@
       if (t.length) out.push({entryId: id, collectionId: t[0][0], text: t[0][1]});
     });
     return out;
+  };
+
+  /** The entry of proverb pid inside collection cid (main entry first), or its first entry anywhere. */
+  Store.prototype.entryFor = function (pid, cid) {
+    var q = 'SELECT e.entry_id, e.collection_id, e.paragraph_order, e.is_representative, e.is_synonym, e.is_reference, ' +
+            'e.header_level, ' + this.srcParaSql() + ' FROM collection_entries e WHERE e.proverb_id = ?';
+    var r = this.rows(q + ' AND e.collection_id = ? ORDER BY e.is_representative DESC, e.paragraph_order LIMIT 1', [pid, cid || 0]);
+    if (!r.length) r = this.rows(q + ' ORDER BY e.is_representative DESC, e.collection_id, e.paragraph_order LIMIT 1', [pid]);
+    if (!r.length) return null;
+    return {entryId: r[0][0], collectionId: r[0][1], order: r[0][2], rep: r[0][3] === 1, syn: r[0][4] === 1, ref: r[0][5] === 1,
+            sourcePara: r[0][7]};
+  };
+
+  /** Feedback: other places with the same proverb (same id OR identical normalized text), max 60. */
+  Store.prototype.siblings = function (pid, excludeEntryId) {
+    var ncol = this.hasColumn('proverbs', 'normalized_text') ? 'normalized_text' : 'search';
+    var s = this.rows('SELECT ' + ncol + ' FROM proverbs WHERE id = ?', [pid]), norm = s.length ? (s[0][0] || '') : '';
+    return this.rows(
+      'SELECT e.entry_id, e.collection_id, e.paragraph_order, e.is_representative, e.is_synonym, e.is_reference, p.id, ' +
+      this.srcParaSql() + ' FROM collection_entries e JOIN proverbs p ON p.id = e.proverb_id ' +
+      'WHERE (p.id = ? OR (? <> \'\' AND p.' + ncol + ' = ?)) AND e.entry_id != ? ' +
+      'ORDER BY e.collection_id, e.paragraph_order LIMIT 60', [pid, norm, norm, excludeEntryId || 0])
+      .map(function (r) {
+        return {entryId: r[0], collectionId: r[1], order: r[2], rep: r[3] === 1, syn: r[4] === 1, ref: r[5] === 1, proverbId: r[6],
+                sourcePara: r[7]};
+      });
   };
 
   Store.prototype.proverb = function (id) {
