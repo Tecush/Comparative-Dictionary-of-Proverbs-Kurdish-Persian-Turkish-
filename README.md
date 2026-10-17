@@ -57,7 +57,7 @@
 
 ## 📥 Download
 
-**Current release: [KP-v2.0.1](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/tag/KP-v2.0.1)** — for Windows, Android, and iPhone & iPad.
+**Current release: [KP-v2.2.0](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/latest)** — for Windows, Android, and iPhone & iPad.
 
 <p align="center">
   <b>31,116</b> collections &nbsp;•&nbsp; <b>120,206</b> proverbs &nbsp;•&nbsp; Kurdish dialects alongside <b>Persian</b> and <b>Turkish</b>
@@ -69,8 +69,8 @@
 
 | Platform | Download | Requirements |
 | :--- | :--- | :--- |
-| 🖥️ **Windows** | [**KurdishProverbs_Setup_v2.0.0.exe**](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.0/KurdishProverbs_Setup_v2.0.0.exe) | Windows 10 or later, 64-bit |
-| 📱 **Android** | [**KurdishProverbs-v2.0.1.apk**](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.0.1/KurdishProverbs-v2.0.1.apk) | Android 8.0 or later |
+| 🖥️ **Windows** | [**KurdishProverbs_Setup_v2.2.0.exe**](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.2.0/KurdishProverbs_Setup_v2.2.0.exe) | Windows 10 or later, 64-bit |
+| 📱 **Android** | [**KurdishProverbs-v2.2.0.apk**](https://github.com/Tecush/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/releases/download/KP-v2.2.0/KurdishProverbs-v2.2.0.apk) | Android 8.0 or later |
 | 🍏 **iPhone & iPad** | [**Open the web app in Safari**](https://tecush.github.io/Comparative-Dictionary-of-Proverbs-Kurdish-Persian-Turkish-/app/) and add it to your Home Screen | iOS 16.4 or later |
 
 > All releases, including earlier versions, are listed on the
